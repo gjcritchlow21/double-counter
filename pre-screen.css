@@ -1,0 +1,82 @@
+/* -----------Font Import----------- */
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Allan&display=swap");
+
+/* --------------Globals------------- */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* --------------Header-------------- */
+.header {
+  font-size: 3vw;
+  font-family: "Carter One", cursive;
+  background-image: linear-gradient(
+    to bottom right,
+    lightblue,
+    lightgrey,
+    violet
+  );
+  width: 100vw;
+  text-align: center;
+}
+
+/* -------Options Container----------- */
+
+/* ----classes---- */
+.textAreas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+  background-image: linear-gradient(
+    to bottom left,
+    violet,
+    lightgrey,
+    lightblue
+  );
+  font-family: "Allan", cursive;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 30vw;
+  height: 160vh;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 7vh;
+  padding-bottom: 5px;
+}
+
+.userClass {
+  resize: none;
+  text-align: center;
+  /* align-content: center; */
+  height: 2vh;
+  font-family: "Allan", cursive;
+  border-radius: 5px;
+}
+
+/* ----Option One---- */
+
+#orderedDisplay {
+  width: 15vw;
+  border: 2px dotted black;
+  border-radius: 5px;
+  font-size: 2vh;
+}
