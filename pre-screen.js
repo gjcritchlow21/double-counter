@@ -41,23 +41,20 @@ function newTicketTaker() {
     return item.split(" : ")[0];
   });
   //sets users based of first 2 inputs
-  let userOne = namesArray[0].toLowerCase();
-  let userTwo = namesArray[1].toLowerCase();
+  let userOne = namesArray[0];
+  let userTwo = namesArray[1];
   //palindrome icebox attempt
   let reverseUserOne = userOne.split("").reverse().join("");
   let reverseUserTwo = userTwo.split("").reverse().join("");
-  
-  
-  console.log(reverseUserTwo);
 
-  if(userOne === reverseUserOne) {
+  //check to see if the user has a palindrome name
+  if (userOne === reverseUserOne) {
     alert(`${userOne} has a palindrome name!`);
   }
-
-  if(userTwo === reverseUserTwo) {
+  //check to see if the user has a palindrome name
+  if (userTwo === reverseUserTwo) {
     alert(`${userTwo} has a palindrome name!`);
   }
-
   //for loop to add user one values
   for (let i = 0; i < valuesArray.length; i += 2) {
     count += valuesArray[i];
