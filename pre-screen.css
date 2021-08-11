@@ -52,7 +52,6 @@ body {
   text-align: center;
   width: 90vw;
   height: 75vh;
-  
   border-radius: 5px;
   padding: 10px;
  
@@ -62,8 +61,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 25vh;
-}
+  height: 30vh;
+ }
 
 /* ----ids---- */
 
@@ -96,7 +95,7 @@ body {
 }
 
 #ticketSubmit {
-  height: 4vh;
+  height: 5vh;
   width: 10vw;
   align-self: center;
   font-family: 'Press Start 2P', cursive;
@@ -106,7 +105,7 @@ body {
 }
 
 #reset {
-  height: 4vh;
+  height: 5vh;
   width: 10vw;
   align-self: center;
   font-family: 'Press Start 2P', cursive;

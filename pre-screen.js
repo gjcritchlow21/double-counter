@@ -25,24 +25,29 @@ reset.addEventListener("click", () => {
 });
 
 //*-------------Global Variables-------------*/
+
 // variables to setting addition to
 let count = 0;
 let countTwo = 0;
 
 /*--------------Function Block---------------*/
+
 // function adds multiple scores from 2 users together
 function newTicketTaker() {
   //splits input into values array, where the numbers are turned into integers
   let valuesArray = userName.value.split("\n").map((item) => {
     return parseInt(item.split(" : ")[1]);
   });
+  
   //names are left as strings
   let namesArray = userName.value.split("\n").map((item) => {
     return item.split(" : ")[0];
   });
+
   //sets users based of first 2 inputs
   let userOne = namesArray[0];
   let userTwo = namesArray[1];
+
   //palindrome icebox attempt
   let reverseUserOne = userOne.split("").reverse().join("");
   let reverseUserTwo = userTwo.split("").reverse().join("");
