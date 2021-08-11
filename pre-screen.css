@@ -3,31 +3,33 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Allan&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 /* --------------Globals------------- */
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color:black;
 }
 
 /* --------------Header-------------- */
 .header {
-  font-size: 3vw;
-  font-family: "Carter One", cursive;
-  background-image: linear-gradient(
-    to bottom right,
-    lightblue,
-    lightgrey,
-    violet
-  );
+  font-size: 2vw;
+  font-family: 'Press Start 2P', cursive;
   width: 100vw;
+  height: 20vh;
+  justify-self: center;
   text-align: center;
+  padding-bottom: 5px;
+  color: white;
 }
 
-/* -------Options Container----------- */
+/* -------Adder Container----------- */
 
 /* ----classes---- */
 .textAreas {
@@ -35,48 +37,109 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   width: 100vw;
-  background-image: linear-gradient(
-    to bottom left,
-    violet,
-    lightgrey,
-    lightblue
-  );
-  font-family: "Allan", cursive;
+  background-image: url('images/spaceInvaders.jpeg');
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center;
+  background-size: 100vw;
 }
 
-.options {
+.adder-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
-  width: 30vw;
-  height: 160vh;
-  border: 5px solid black;
+  width: 90vw;
+  height: 75vh;
+  
   border-radius: 5px;
+  padding: 10px;
+ 
 }
 
 .input-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 7vh;
-  padding-bottom: 5px;
+  height: 25vh;
 }
 
-.userClass {
-  resize: none;
-  text-align: center;
-  /* align-content: center; */
-  height: 2vh;
-  font-family: "Allan", cursive;
+/* ----ids---- */
+
+#title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 3vh;
+  width: 40vw;
+  height: 60vh;
+  border: 5px solid white;
   border-radius: 5px;
+  background-color: rgba(255,255,255,.4);
+  color: black;
+  font-family: 'Press Start 2P', cursive;
+}
+#title-container h2 {
+  font-size: 6vh;
 }
 
-/* ----Option One---- */
+#userName {
+  text-align: center;
+  width: 30vw;
+  height: 15vh;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2vh;
+  border-radius: 5px;
+  box-shadow: 5px 5px black;
+}
+
+#ticketSubmit {
+  height: 4vh;
+  width: 10vw;
+  align-self: center;
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 5px;
+  box-shadow: 5px 5px black;
+  background-image: linear-gradient(to bottom right, lightgreen,yellow,rgb(209, 73, 73));
+}
+
+#reset {
+  height: 4vh;
+  width: 10vw;
+  align-self: center;
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 5px;
+  box-shadow: 5px 5px black;
+  background-image: linear-gradient(to bottom right, lightgreen,yellow,rgb(209, 73, 73));
+}
 
 #orderedDisplay {
-  width: 15vw;
-  border: 2px dotted black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30vw;
+  height: 60vh;
+  border: 5px solid white;
   border-radius: 5px;
+  background-color: rgba(255,255,255,.4);
+  font-family: 'Press Start 2P', cursive;
   font-size: 2vh;
+}
+#orderedDisplay > h2 {
+  font-size: 4vh;
+  color: black;
+}
+
+#addedUp{
+  height: 20vh;
+}
+
+#userOneDisplay{
+  padding:5px;
+}
+
+#userTwoDisplay{
+  padding:5px;
 }

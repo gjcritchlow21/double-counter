@@ -4,75 +4,72 @@
 let userName = document.getElementById("userName");
 let ticket = document.getElementById("ticketSubmit");
 let orderDisplay = document.getElementById("displayContainer");
-
-// Option Two
-let jsOnly = document.getElementById("jsOnly");
-let jsStart = document.getElementById("jsOnlyBtn");
-let johnCount = document.getElementById("johnCount");
-let janeCount = document.getElementById("janeCount");
-let countUp = document.getElementById("countUp");
-let countUpTwo = document.getElementById("countUpTwo");
+let userOneDisplay = document.getElementById("userOneDisplay");
+let userTwoDisplay = document.getElementById("userTwoDisplay");
+let reset = document.getElementById("reset");
 
 /*------------Event Listenters---------------*/
 
-// Option One
+//adder event listener
 ticket.addEventListener("click", () => {
-  ticketTaker();
+  newTicketTaker();
+  reset.disabled = false;
 });
 
-// Option Two
-jsStart.addEventListener("click", () => {
-  JackOrJane();
+//reset button listener
+reset.addEventListener("click", () => {
+  count = 0;
+  countTwo = 0;
+  userOneDisplay.innerHTML = "Resetting....";
+  userTwoDisplay.innerHTML = "Resetting....";
 });
 
-/*-------------Global Variables-------------*/
-// Option One
-let ticketNumber = 0;
-
-// Option Two
+//*-------------Global Variables-------------*/
+// variables to setting addition to
 let count = 0;
 let countTwo = 0;
 
 /*--------------Function Block---------------*/
-// Option One
-//function is triggered on the click, increments count to 25, displays the user and the ticket number, then stops once 25 users have been submitted
-function ticketTaker() {
-  if (ticketNumber < 25) {
-    ticketNumber++;
-    orderDisplay.innerHTML += `<h4 class='linkContainer'>${userName.value} : ${ticketNumber}</h4>`;
-  } else {
-    alert("Gonna process some of these tickets before any more can be taken");
-  }
-}
+// function adds multiple scores from 2 users together
+function newTicketTaker() {
+  //splits input into values array, where the numbers are turned into integers
+  let valuesArray = userName.value.split("\n").map((item) => {
+    return parseInt(item.split(" : ")[1]);
+  });
+  //names are left as strings
+  let namesArray = userName.value.split("\n").map((item) => {
+    return item.split(" : ")[0];
+  });
+  //sets users based of first 2 inputs
+  let userOne = namesArray[0].toLowerCase();
+  let userTwo = namesArray[1].toLowerCase();
+  //palindrome icebox attempt
+  let reverseUserOne = userOne.split("").reverse().join("");
+  let reverseUserTwo = userTwo.split("").reverse().join("");
+  
+  
+  console.log(reverseUserTwo);
 
-// Option Two
-//function to determine if John or Jane has entered their name
-function JackOrJane() {
-  //steralizes the input to an all lowercase string to check against
-  let cleanInput = jsOnly.value.toString().trim().toLowerCase();
-  console.log(cleanInput);
-  //if else statement to check input against and enable button use for the counter
-  if (cleanInput === "john") {
-    johnCount.disabled = false;
-    janeCount.disabled = true;
-    alert("Start Counting, John!");
-  } else if (cleanInput === "jane") {
-    janeCount.disabled = false;
-    johnCount.disabled = true;
-    alert("Start Counting, Jane!");
-  } else {
-    johnCount.disabled = true;
-    janeCount.disabled = true;
-    alert("You're not John or Jane????? Who is this " + jsOnly.value + "???");
+  if(userOne === reverseUserOne) {
+    alert(`${userOne} has a palindrome name!`);
   }
-}
-// first counter
-function counter() {
-  count++;
-  countUp.textContent = count;
-}
-//second counter
-function counterTwo() {
-  countTwo++;
-  countUpTwo.textContent = countTwo;
+
+  if(userTwo === reverseUserTwo) {
+    alert(`${userTwo} has a palindrome name!`);
+  }
+
+  //for loop to add user one values
+  for (let i = 0; i < valuesArray.length; i += 2) {
+    count += valuesArray[i];
+  }
+  //for loop to add user two values
+  for (let i = 1; i < valuesArray.length; i += 2) {
+    countTwo += valuesArray[i];
+  }
+  //sets values for dom scripting
+  let userOneMath = count;
+  let userTwoMath = countTwo;
+  //displays to page
+  userOneDisplay.innerHTML = `<h2 class="results">${userOne.toUpperCase()} has a total of ${userOneMath}</h2>`;
+  userTwoDisplay.innerHTML = `<h2 class="results">${userTwo.toUpperCase()} has a total of ${userTwoMath}</h2>`;
 }

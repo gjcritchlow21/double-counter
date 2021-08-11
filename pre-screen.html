@@ -8,71 +8,26 @@
     <title>G.J.'s Tech Interview</title>
   </head>
   <body>
-    <!-- Header Section -->
     <section class="header">
-      <h1>Welcome to the <i>Awesome</i> User Counter!</h1>
+      <h1>High-Score Adder</h1>
     </section>
-    <!-- I originally understood the project as Option 2 and reached out for clarity and realized Option 1 was the true ask, but I wanted to showcase my skills and my ability to pivot. I hope you enjoy my little counter! -->
-    <!-- Text Area Section -->
     <section class="textAreas">
       <!-- Option 1 -->
-
-      <div class="options">
-        <h2>Option 1: Ticket Taker</h2>
-        <h3>User inputs their name, and its assigns them a number in line.</h3>
-        <!-- Form for User Input -->
-        <form class="input-form" method="POST" action="">
-          <textarea
-            class="userClass"
-            id="userName"
-            type="text"
-            placeholder="Name Please"
-          ></textarea>
-          <button id="ticketSubmit" type="button">Take Ticket</button>
-        </form>
+      <div class="adder-wrapper">
+        <div id="title-container">
+          <!-- Form for User Input -->
+          <form class="input-form" method="POST" action="">
+            <textarea id="userName" type="text" placeholder="Name : Value"></textarea>
+            <button id="ticketSubmit" type="button">Add 'em up!</button>
+            <button id="reset" type="button" disabled=true>Reset Scores</button>
+          </form>
+          <h3>Enter PlayerOne and PlayerTwo's scores to see who won!</h3>
+        </div>
         <!-- Container of Ticket Order -->
         <div id="orderedDisplay">
-          <h2>Ticket Order:</h2>
-          <div id="displayContainer"></div>
-        </div>
-      </div>
-      <!-- Option 2 -->
-      <div class="options">
-        <h2>Option 2: John and Jane Only</h2>
-        <h3>
-          John and Jane can enter their name, and then click a button to
-          increment
-        </h3>
-        <!-- Form for John and Jane Input -->
-        <form class="input-form" method="POST" action="">
-          <textarea
-            class="userClass"
-            id="jsOnly"
-            type="text"
-            placeholder="John or Jane Only"
-          ></textarea>
-          <button id="jsOnlyBtn" type="button">Submit Name</button>
-        </form>
-        <!-- Container for John and Jane to Count in -->
-        <div id="jsWrapper">
-          <h2>John: <span id="countUp">0</span></h2>
-          <button
-            id="johnCount"
-            type="button"
-            disabled="true"
-            onclick="counter()"
-          >
-            Count Up!
-          </button>
-          <h2>Jane: <span id="countUpTwo">0</span></h2>
-          <button
-            id="janeCount"
-            type="button"
-            disabled="true"
-            onclick="counterTwo()"
-          >
-            Count Up!
-          </button>
+          <h2>High-Scores:</h2>
+          <div id="userOneDisplay"></div>
+          <div id="userTwoDisplay"></div>
         </div>
       </div>
     </section>
